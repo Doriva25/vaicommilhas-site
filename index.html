@@ -326,6 +326,9 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
   .fgrid{grid-template-columns:1fr 1fr}
   .flogo{grid-column:1/-1}
 }
+@media (max-width:560px){
+  .hero>.wrap{padding-inline:28px}
+}
 @media (max-width:680px){
   .steps,.fit,.testis{grid-template-columns:1fr}
   .anat ul{grid-template-columns:1fr}
@@ -477,12 +480,12 @@ function home(){return `
  <div class="rv">
   <span class="eyebrow">Grupo de alertas de passagens com milhas</span>
   <h1>Voe melhor pagando <em>menos</em>.</h1>
-  <p class="lead">Aquelas oportunidades em milhas que aparecem e somem antes de você ver, eu aviso a tempo. O grupo pago sai a partir de R$ 26,67 por mês no plano anual. Para testar, o canal gratuito recebe algumas.</p>
+  <p class="lead">Você tem milhas mas não tem tempo para ficar pesquisando? Então o grupo é para você: vários alertas por dia, em várias rotas, em primeira mão. Você só escolhe a rota e a cabine. E se ainda não tem milhas, também mostro o caminho.</p>
   <div class="cta-row cta-stack">
    <a class="btn btn-coral" href="${TG}" ${ext} data-ev="canal_hero">${ico('tg')}Entrar no canal grátis</a>
    <a class="cta-link" href="#/planos" data-go="planos">Ver planos do grupo${ico('arrow')}</a>
   </div>
-  <p class="micro">${ico('check')}Grátis, pelo Telegram. Você sai do canal quando quiser.</p>
+  <p class="micro">${ico('check')}Grupo pago a partir de R$ 26,67 por mês no plano anual. Canal gratuito para testar.</p>
   <div class="hero-pills"><span>Executiva</span><span>Primeira classe</span><span>Econômica</span><span>Resgates inteligentes</span></div>
  </div>
  <div class="rv">
