@@ -453,7 +453,7 @@ const FAQ=[
  ['Qual a diferença entre o canal grátis e o grupo pago?','<p>O canal grátis traz alertas selecionados e conteúdo para começar. O grupo pago recebe mais oportunidades, assim que entram na curadoria, e inclui o passo a passo para avaliar e emitir, além de estratégias de bônus e compra de pontos.</p>'],
  ['Onde eu recebo os alertas?','<p>No Telegram. Basta ter o app instalado. Você ativa as notificações do canal ou do grupo e recebe cada alerta no celular.</p>'],
  ['Os valores dos alertas são garantidos?','<p>Não. Vagas com milhas mudam o tempo todo e podem acabar em minutos. Por isso a recomendação é sempre confirmar a disponibilidade no site do programa antes de transferir pontos ou emitir.</p>'],
- ['Como funciona o cupom VAICOMMILHAS30?','<p>O cupom dá 30% de desconto no primeiro ciclo da assinatura (primeiro mês, trimestre ou ano, conforme o plano). As renovações seguintes são cobradas pelo valor cheio do plano. O cupom tem quantidade limitada de usos.</p>'],
+ ['Como funciona o cupom VAICOMMILHAS30?','<p>O cupom dá 30% de desconto no primeiro ciclo da assinatura (primeiro mês, trimestre ou ano, conforme o plano). As renovações seguintes são cobradas pelo valor cheio do plano. O cupom é limitado aos primeiros 100 usos.</p>'],
  ['Como eu cancelo a assinatura?','<p>A assinatura é gerenciada pela Hubla. Você pode cancelar a renovação automática a qualquer momento pela sua área de cliente na Hubla, e o acesso continua até o fim do período já pago.</p><p>Para compras feitas pela internet, você tem direito de arrependimento em até 7 dias após a contratação, conforme o artigo 49 do Código de Defesa do Consumidor.</p>'],
  ['Posso pagar com Pix?','<p>Sim. A página de pagamento da Hubla aceita cartão de crédito e Pix.</p>'],
 ];
@@ -691,7 +691,7 @@ function privacidade(){return `
 
  <h2>2. Dados que tratamos</h2>
  <ul>
-  <li><b>Navegação no site:</b> estatísticas de acesso agregadas (páginas visitadas, origem da visita, tipo de dispositivo), sem identificar você pessoalmente.</li>
+  <li><b>Navegação no site:</b> estatísticas de acesso agregadas (páginas visitadas, origem da visita, tipo de dispositivo), coletadas pelo Cloudflare Web Analytics, sem cookies e sem identificar você pessoalmente.</li>
   <li><b>Canal e grupo no Telegram:</b> seu nome de usuário e as mensagens que você enviar ficam no Telegram, conforme a política da própria plataforma.</li>
   <li><b>Assinatura:</b> nome, e-mail, telefone, documento e dados de pagamento são coletados e processados pela Hubla. Recebemos da Hubla apenas o necessário para liberar e gerenciar seu acesso.</li>
  </ul>
@@ -749,5 +749,6 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 (()=>{const d=document.createElement('script');d.type='application/ld+json';d.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}}))});document.head.appendChild(d)})();
 </script>
 
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "957a5e89251249eeb51c2c7e3e3aab0c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
