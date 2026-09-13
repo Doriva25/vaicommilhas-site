@@ -10,10 +10,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vaicommilhas.com/">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://vaicommilhas.com/og-vaicommilhas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vai com Milhas: alertas de passagens com milhas em executiva, primeira e econômica.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vaicommilhas.com/og-vaicommilhas.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%230C1B2A%22/%3E%3Cg%20transform%3D%22translate%2850%2050%29%20scale%281.3%29%20translate%28-50%20-50%29%20rotate%28-11%2050%2050%29%22%3E%3Cpath%20d%3D%22M24%2035h32a4%204%200%200%200%208%200h12a5%205%200%200%201%205%205v20a5%205%200%200%201-5%205H64a4%204%200%200%200-8%200H24a5%205%200%200%201-5-5V40a5%205%200%200%201%205-5z%22%20fill%3D%22%23FFF6EC%22/%3E%3Cpath%20d%3D%22M60%2039.5V61%22%20stroke%3D%22%230C1B2A%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%222%201.6%22/%3E%3Cpath%20d%3D%22M45.5%2040.5%20L31.5%2054%20L39.2%2053.3%20L42.2%2060.5%20Z%22%20fill%3D%22%23FF5436%22/%3E%3Cpath%20d%3D%22M45.5%2040.5%20L39.2%2053.3%20L40.9%2054.8%20Z%22%20fill%3D%22%23FFC83D%22/%3E%3Cpath%20d%3D%22M65%2043h10%22%20stroke%3D%22%23FF5436%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M66%2049h6%22%20stroke%3D%22%230C1B2A%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M66%2055h9%22%20stroke%3D%22%230C1B2A%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://vaicommilhas.com/#org","name":"Vai com Milhas","alternateName":"Vai com Milhas Turismo","legalName":"A Soares Cerqueira da Silva Viagens & Serviços Ltda","taxID":"68.390.973/0001-18","url":"https://vaicommilhas.com/","sameAs":["https://www.instagram.com/vaicommilhas.alerta/","https://t.me/vaicommilhasalertagratis"]},
@@ -26,6 +31,11 @@
 ]}
 </script>
 <style>
+/* fontes servidas do próprio domínio, sem depender do Google Fonts */
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:200 800;font-stretch:100%;font-display:swap;src:url(/bricolage-grotesque-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:200 800;font-stretch:100%;font-display:swap;src:url(/bricolage-grotesque-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/outfit-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/outfit-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --tinta:#0C1B2A;--tinta2:#132A40;--creme:#FFF6EC;--creme2:#F6E9D8;--coral:#FF5436;--coral-ink:#D63B1F;--ouro:#FFC83D;
   --ink:#0C1B2A;--muted:#5B6776;--line:#E8DAC6;--card:#FFFFFF;--ok:#1F9D63;
@@ -380,14 +390,14 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
       <a href="#/planos" data-go="planos">Planos</a>
       <a href="#/guia-vai-com-milhas">Guia Vai com Milhas</a>
       <a href="#/duvidas" data-go="duvidas">Dúvidas</a>
-      <a class="btn btn-coral" href="https://t.me/vaicommilhasalertagratis" target="_blank" rel="noopener" data-ev="canal_header"><svg><use href="#i-tg"/></svg>Entrar no canal grátis</a>
+      <a class="btn btn-coral" href="https://t.me/vaicommilhasalertagratis?origem=topo" target="_blank" rel="noopener" data-ev="canal_header"><svg><use href="#i-tg"/></svg>Entrar no canal grátis</a>
     </nav>
   </div>
 </header>
 
 <main id="app"></main>
 
-<a class="tg-float" id="tgf" href="https://t.me/vaicommilhasalertagratis" target="_blank" rel="noopener" data-ev="canal_flutuante" aria-label="Entrar no canal grátis no Telegram"><svg><use href="#i-tg"/></svg><span>Canal grátis</span></a>
+<a class="tg-float" id="tgf" href="https://t.me/vaicommilhasalertagratis?origem=flutuante" target="_blank" rel="noopener" data-ev="canal_flutuante" aria-label="Entrar no canal grátis no Telegram"><svg><use href="#i-tg"/></svg><span>Canal grátis</span></a>
 
 <footer>
   <div class="wrap">
@@ -409,7 +419,7 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
       <div>
         <h4>Acompanhe</h4>
         <ul>
-          <li><a href="https://t.me/vaicommilhasalertagratis" target="_blank" rel="noopener" data-ev="canal_rodape">Canal grátis no Telegram</a></li>
+          <li><a href="https://t.me/vaicommilhasalertagratis?origem=rodape" target="_blank" rel="noopener" data-ev="canal_rodape">Canal grátis no Telegram</a></li>
           <li><a href="https://www.instagram.com/vaicommilhas.alerta/" target="_blank" rel="noopener" data-ev="instagram_rodape">Instagram @vaicommilhas.alerta</a></li>
           <li><a href="https://pay.hub.la/VLkxrC4SgoaCWVMtSbvc" target="_blank" rel="noopener" data-ev="hubla_rodape">Assinar o grupo</a></li>
           <li><a href="https://pay.hub.la/bEsLXS9lj3azZY6IidxC" target="_blank" rel="noopener" data-ev="ebook_rodape">Ebook Como Gerar Milhas do Zero</a></li>
@@ -426,7 +436,10 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
 </footer>
 
 <script>
-const TG='https://t.me/vaicommilhasalertagratis', HUBLA='https://pay.hub.la/VLkxrC4SgoaCWVMtSbvc', IG='https://www.instagram.com/vaicommilhas.alerta/';
+const TG='https://t.me/vaicommilhasalertagratis';
+/* mesmo endereço do canal, com a origem do clique no fim: tg('hero'), tg('planos')... */
+const tg=origem=>`${TG}?origem=${origem}`;
+const HUBLA='https://pay.hub.la/VLkxrC4SgoaCWVMtSbvc', IG='https://www.instagram.com/vaicommilhas.alerta/';
 const ico=(id,cls='')=>`<svg class="${cls}"><use href="#i-${id}"/></svg>`;
 const ext=`target="_blank" rel="noopener"`;
 
@@ -483,7 +496,7 @@ function home(){return `
   <p class="lead">Você tem milhas mas não tem tempo para ficar pesquisando? Então o grupo é para você: vários alertas por dia, em várias rotas, em primeira mão. Você só escolhe a rota e a cabine. E se ainda não tem milhas, também mostro o caminho.</p>
   <div class="cta-row cta-stack">
    <a class="btn btn-coral" href="#/planos" data-go="planos">Ver planos do grupo${ico('arrow')}</a>
-   <a class="cta-link" href="${TG}" ${ext} data-ev="canal_hero">${ico('tg')}Entrar no canal grátis</a>
+   <a class="cta-link" href="${tg('hero')}" ${ext} data-ev="canal_hero">${ico('tg')}Entrar no canal grátis</a>
   </div>
   <p class="micro">${ico('check')}Grupo pago a partir de R$ 26,67 por mês no plano anual. Canal gratuito para testar.</p>
   <div class="hero-pills"><span>Executiva</span><span>Primeira classe</span><span>Econômica</span><span>Resgates inteligentes</span></div>
@@ -540,7 +553,7 @@ ${trustStrip()}
     <li>${ico('check')}Conteúdo para quem está começando</li>
     <li>${ico('check')}Entra e sai quando quiser</li>
    </ul>
-   <a class="btn btn-dark" href="${TG}" ${ext} data-ev="canal_planos">${ico('tg')}Entrar no canal grátis</a>
+   <a class="btn btn-dark" href="${tg('planos')}" ${ext} data-ev="canal_planos">${ico('tg')}Entrar no canal grátis</a>
   </div>
   <div class="plan pro rv">
    <span class="kick">Curadoria</span>
@@ -627,7 +640,7 @@ ${finalCta()}
 function finalCta(){return `<section class="wrap"><div class="final rv">
  <div><h2>A próxima vaga boa pode abrir hoje.</h2><p>Entre no canal grátis e receba os próximos alertas no Telegram. Se gostar, você conhece o grupo depois.</p></div>
  <div class="acts">
-  <a class="btn btn-coral" href="${TG}" ${ext} data-ev="canal_final">${ico('tg')}Quero receber os alertas</a>
+  <a class="btn btn-coral" href="${tg('final')}" ${ext} data-ev="canal_final">${ico('tg')}Quero receber os alertas</a>
   <a class="btn btn-ghost" href="#/planos" data-go="planos">Ver planos do grupo</a>
  </div>
 </div></section>`}
@@ -683,7 +696,7 @@ function guia(){return `
 
  <h2>Quer receber as vagas sem precisar procurar?</h2>
  <p>O canal grátis do Vai com Milhas manda alertas selecionados com a conta explicada. É só entrar pelo Telegram.</p>
- <p style="margin-top:22px"><a class="btn btn-coral" href="${TG}" ${ext} data-ev="canal_guia">${ico('tg')}Entrar no canal grátis</a></p>
+ <p style="margin-top:22px"><a class="btn btn-coral" href="${tg('guia')}" ${ext} data-ev="canal_guia">${ico('tg')}Entrar no canal grátis</a></p>
 </article></div>
 <div style="height:48px"></div>
 ${finalCta()}
