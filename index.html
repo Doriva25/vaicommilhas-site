@@ -160,7 +160,16 @@ nav.main .btn{min-height:42px;padding:0 18px;font-size:14.5px;opacity:1;color:#f
 
 /* plans */
 .plans{background:var(--creme2)}
-.plan-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:stretch}
+.plan-grid{display:grid;grid-template-columns:1fr 1.1fr 1.1fr;gap:20px;align-items:stretch}
+.plan.gm{border:2px solid var(--coral);position:relative}
+.plan.gm .kick{color:var(--coral-ink)}
+.plan.gm .price-opt{border-color:var(--line)}
+.plan.gm .price-opt.best{border-color:var(--coral);background:rgba(255,84,54,.06)}
+.plan.gm .price-opt .flag{background:var(--coral);color:#fff}
+.plan.gm .price-opt small,.plan.gm .price-opt span,.plan.gm .plan-foot{color:var(--muted)}
+@media (min-width:981px){.plan-grid .price-opt{min-width:0;padding:12px 6px}.plan-grid .price-opt b{font-size:20px}.plan-grid .price-opt small{font-size:10.5px;letter-spacing:.06em}.plan-grid .price-opt span{font-size:11.5px}.plan-grid .prices{gap:8px}.plan.gm .price-opt b{font-size:17px;letter-spacing:-.02em}}
+.plan.gm .btn{margin-top:18px}
+@media (max-width:1100px) and (min-width:981px){.plan{padding:26px}.plan .prices{grid-template-columns:1fr}}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column}
 .plan.pro{background:var(--tinta);color:var(--creme);border-color:var(--tinta);position:relative;overflow:hidden}
 .plan.pro::after{content:"";position:absolute;right:-90px;bottom:-90px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,200,61,.07)}
@@ -536,6 +545,10 @@ const FAQ=[
  ['Como funciona o cupom VAICOMMILHAS30?','<p>O cupom dá 30% de desconto no primeiro ciclo da assinatura (primeiro mês, trimestre ou ano, conforme o plano). As renovações seguintes são cobradas pelo valor cheio do plano. O cupom é limitado aos primeiros 100 usos.</p>'],
  ['Como eu cancelo a assinatura?','<p>A assinatura é gerenciada pela Hubla. Você pode cancelar a renovação automática a qualquer momento pela sua área de cliente na Hubla, e o acesso continua até o fim do período já pago.</p><p>Para compras feitas pela internet, você tem direito de arrependimento em até 7 dias após a contratação, conforme o artigo 49 do Código de Defesa do Consumidor.</p>'],
  ['Posso pagar com Pix?','<p>Sim. A página de pagamento da Hubla aceita cartão de crédito e Pix.</p>'],
+ ['O que é o Gestor de Milhas?','<p>É o app da Vai com Milhas para quem compra, emite e vende milhas. Ele controla o estoque de cada conta com custo médio e validade por lote, as vagas de CPF por programa, as emissões, a cobrança dos clientes com Pix e o lucro de cada venda. Funciona no navegador do celular e do computador.</p>'],
+ ['Qual a diferença entre o grupo de alertas e o Gestor + Alertas?','<p>O grupo é para quem quer viajar: você recebe os alertas no Telegram. O Gestor + Alertas é para quem opera milhas: além do grupo, você usa o Gestor e vê os alertas dentro dele, já com o milheiro das suas próprias contas.</p>'],
+ ['Preciso de cartão para testar o Gestor?','<p>Não. O teste dura 30 dias, com tudo liberado e sem cartão. As assinaturas abrem em 13/10/2026, e seus dados continuam lá quando você assinar.</p>'],
+ ['Uso o Iddas. Consigo levar meus dados para o Gestor?','<p>Sim. O Gestor importa as contas e os saldos exportados do Iddas, e tem uma tela para conferir os saldos dos dois lado a lado.</p>'],
 ];
 
 function trustStrip(){return `<section class="trust" aria-label="Por que confiar"><div class="wrap">
@@ -548,14 +561,15 @@ function trustStrip(){return `<section class="trust" aria-label="Por que confiar
 function home(){return `
 <section class="hero"><div class="wrap hero-grid">
  <div class="rv">
-  <span class="eyebrow">Grupo de alertas de passagens com milhas</span>
+  <span class="eyebrow">Alertas de passagens com milhas e gestão de milhas</span>
   <h1>Voe melhor pagando <em>menos</em>.</h1>
-  <p class="lead">Você tem milhas mas não tem tempo para ficar pesquisando? Então o grupo é para você: vários alertas por dia, em várias rotas, em primeira mão. Você só escolhe a rota e a cabine. E se ainda não tem milhas, também mostro o caminho.</p>
+  <p class="lead">Você tem milhas mas não tem tempo para ficar pesquisando? O grupo de alertas manda vários por dia, em várias rotas, em primeira mão. E se você compra, emite ou vende milhas, o Gestor de Milhas organiza estoque, custo do milheiro, CPFs e lucro de cada venda, com os alertas junto.</p>
   <div class="cta-row cta-stack">
-   <a class="btn btn-coral" href="#/planos" data-go="planos">Ver planos do grupo${ico('arrow')}</a>
+   <a class="btn btn-coral" href="#/planos" data-go="planos">Ver planos${ico('arrow')}</a>
+   <a class="btn btn-ghost" href="https://gestor.vaicommilhas.com/conheca?origem=site_hero" target="_blank" rel="noopener" data-ev="gestor_hero">Conhecer o Gestor</a>
    <a class="cta-link" href="${tg('hero')}" ${ext} data-ev="canal_hero">${ico('tg')}Entrar no canal grátis</a>
   </div>
-  <p class="micro">${ico('check')}Grupo pago a partir de R$ 26,67 por mês no plano anual. Canal gratuito para testar.</p>
+  <p class="micro">${ico('check')}Grupo de alertas a partir de R$ 26,67 por mês no anual. Gestor com 30 dias de teste, sem cartão. Canal gratuito para conhecer.</p>
   <div class="hero-pills"><span>Executiva</span><span>Primeira classe</span><span>Econômica</span><span>Resgates inteligentes</span></div>
  </div>
  <div class="rv">
@@ -589,7 +603,7 @@ ${trustStrip()}
     <li>${ico('check')}Passo a passo para avaliar e emitir na sua conta</li>
    </ul>
    <p class="for">A partir de R$ 26,67 por mês no plano anual.</p>
-   <div class="acts"><a class="btn btn-coral" href="#/planos" data-go="planos">Ver planos do grupo${ico('arrow')}</a><a class="btn btn-ghost" href="${tg('produtos')}" ${ext} data-ev="canal_produtos">Canal grátis</a></div>
+   <div class="acts"><a class="btn btn-coral" href="#/planos" data-go="planos">Ver planos${ico('arrow')}</a><a class="btn btn-ghost" href="${tg('produtos')}" ${ext} data-ev="canal_produtos">Canal grátis</a></div>
   </article>
   <article class="prod dk rv">
    <span class="kick">Para quem compra, emite e vende</span>
@@ -615,6 +629,7 @@ ${trustStrip()}
   <div class="step rv"><div class="n">02</div><h3>Você recebe o alerta</h3><p>Chega no Telegram com rota, cabine, companhia, programa, milhas, taxas e as datas abertas, tudo pronto para avaliar.</p></div>
   <div class="step rv"><div class="n">03</div><h3>Você confere e emite</h3><p>Com a conta na mão, você confirma a vaga no site do programa e emite na sua própria conta, sem intermediário.</p></div>
  </div>
+ <div class="value-note rv" style="margin-top:22px">${ico('info')}<span>Opera milhas? No plano <b>Gestor + Alertas</b>, os alertas também aparecem dentro do Gestor, e a emissão entra direto no seu estoque com o custo real das suas contas. <a href="#/planos" data-go="planos">Ver o plano</a></span></div>
 </div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap anat">
@@ -630,7 +645,7 @@ ${trustStrip()}
 </div></section>
 
 <section class="sec plans" id="planos"><div class="wrap">
- <div class="sec-head rv"><span class="eyebrow">Planos</span><h2>Escolha como você quer acompanhar.</h2><p class="lead">Comece pelo canal grátis. Se quiser receber mais oportunidades e o passo a passo, conheça o grupo.</p></div>
+ <div class="sec-head rv"><span class="eyebrow">Planos</span><h2>Escolha como você quer acompanhar.</h2><p class="lead">Comece pelo canal grátis. Para receber tudo, assine o grupo. Se você compra, emite ou vende milhas, o Gestor + Alertas junta os alertas e a gestão da sua operação.</p></div>
  <div class="plan-grid">
   <div class="plan rv">
    <span class="kick">Porta de entrada</span>
@@ -663,6 +678,25 @@ ${trustStrip()}
    <a class="btn btn-ouro" href="${HUBLA}" ${ext} data-ev="hubla_planos">Assinar o grupo${ico('arrow')}</a>
    <p class="plan-foot">Pagamento pela Hubla, com cartão ou Pix. Cancele a renovação automática quando quiser. Valores conferidos em setembro de 2026.</p>
   </div>
+  <div class="plan gm rv">
+   <span class="kick">Mais completo</span>
+   <h3>Gestor + Alertas</h3>
+   <p>Para quem compra, emite ou vende milhas: o grupo de alertas mais o app que organiza a operação.</p>
+   <ul>
+    <li>${ico('check')}Tudo do grupo de alertas</li>
+    <li>${ico('check')}Alertas dentro do Gestor, com o milheiro das suas contas</li>
+    <li>${ico('check')}Estoque, custo médio e validade por lote</li>
+    <li>${ico('check')}Vagas de CPF, emissões, cobrança com Pix e lucro por venda</li>
+    <li>${ico('check')}Importa seus dados do Iddas</li>
+   </ul>
+   <div class="prices">
+    <div class="price-opt"><small>Mensal</small><b>R$ 59,90</b><span>por mês</span></div>
+    <div class="price-opt"><small>Trimestral</small><b>R$ 159,90</b><span>R$ 53,30 por mês</span></div>
+    <div class="price-opt best"><span class="flag">Mais econômico</span><small>Anual</small><b>R$ 540</b><span>R$ 45 por mês</span></div>
+   </div>
+   <a class="btn btn-coral" href="https://gestor.vaicommilhas.com/conheca?origem=site_planos" target="_blank" rel="noopener" data-ev="gestor_planos">Testar 30 dias sem cartão${ico('arrow')}</a>
+   <p class="plan-foot">Assinaturas a partir de 13/10, com preço de lançamento mantido por 12 meses. Só o Gestor, sem alertas: a partir de R$ 27,92 por mês no anual.</p>
+  </div>
  </div>
  <div class="value-note rv">${ico('info')}<span>Se um alerta encaixar numa viagem que você já planejava, a diferença entre emitir com milhas e comprar a passagem paga pode superar o valor do plano. A economia varia em cada emissão e não é garantida.</span></div>
 </div></section>
@@ -678,11 +712,12 @@ ${trustStrip()}
   </ul></div>
   <div class="no rv"><h3><i>✕</i>Não é para você se</h3><ul>
    <li>Procura alguém para emitir a passagem por você.</li>
-   <li>Quer vender as suas milhas.</li>
+   <li>Quer que a gente compre as suas milhas.</li>
    <li>Espera preço garantido ou vaga reservada.</li>
    <li>Não tem flexibilidade nenhuma de datas.</li>
   </ul></div>
  </div>
+ <div class="value-note rv" style="margin-top:22px">${ico('info')}<span>Compra, vende ou emite milhas para clientes? Para organizar a operação, o caminho é o <b>Gestor de Milhas</b>: estoque, CPFs, custo do milheiro e lucro de cada venda. <a href="https://gestor.vaicommilhas.com/conheca?origem=site_paraquem" target="_blank" rel="noopener" data-ev="gestor_paraquem">Conhecer o Gestor</a></span></div>
 </div></section>
 
 <section class="sec" id="comecar" style="padding-top:0"><div class="wrap"><div class="ebook rv">
@@ -727,10 +762,10 @@ ${finalCta()}
 `}
 
 function finalCta(){return `<section class="wrap"><div class="final rv">
- <div><h2>A próxima vaga boa pode abrir hoje.</h2><p>Entre no canal grátis e receba os próximos alertas no Telegram. Se gostar, você conhece o grupo depois.</p></div>
+ <div><h2>A próxima vaga boa pode abrir hoje.</h2><p>Entre no canal grátis e receba os próximos alertas no Telegram. Se gostar, você conhece o grupo depois. Opera milhas? Teste o Gestor por 30 dias.</p></div>
  <div class="acts">
   <a class="btn btn-coral" href="${tg('final')}" ${ext} data-ev="canal_final">${ico('tg')}Quero receber os alertas</a>
-  <a class="btn btn-ghost" href="#/planos" data-go="planos">Ver planos do grupo</a>
+  <a class="btn btn-ghost" href="#/planos" data-go="planos">Ver planos</a>
  </div>
 </div></section>`}
 
@@ -879,6 +914,64 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 (()=>{const d=document.createElement('script');d.type='application/ld+json';d.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}}))});document.head.appendChild(d)})();
 </script>
 
+<!-- ================= CHAT COM IA ================= -->
+<style>
+.vc-btn{position:fixed;right:18px;bottom:78px;z-index:41;display:flex;align-items:center;gap:8px;background:var(--tinta);color:var(--creme);border:0;border-radius:999px;padding:12px 16px;font:600 14.5px var(--fb);box-shadow:0 14px 30px -10px rgba(12,27,42,.6);cursor:pointer}
+.vc-btn svg{width:20px;height:20px}
+.vc-box{position:fixed;right:18px;bottom:18px;z-index:60;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 110px));background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 60px -20px rgba(12,27,42,.45);display:none;flex-direction:column;overflow:hidden}
+.vc-box.open{display:flex}
+.vc-head{background:var(--tinta);color:var(--creme);padding:14px 16px;display:flex;align-items:center;gap:10px}
+.vc-head b{font-family:var(--fd);font-size:16px;display:block}
+.vc-head small{opacity:.75;font-size:12px}
+.vc-head button{margin-left:auto;background:none;border:0;color:var(--creme);font-size:22px;line-height:1;cursor:pointer;padding:4px 8px}
+.vc-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--creme)}
+.vc-m{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
+.vc-m.bot{background:var(--card);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.vc-m.eu{background:var(--coral);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.vc-m a{color:var(--coral-ink);font-weight:600}
+.vc-m.eu a{color:#fff}
+.vc-sug{display:flex;flex-wrap:wrap;gap:6px}
+.vc-sug button{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 11px;font:500 13px var(--fb);cursor:pointer;color:var(--ink)}
+.vc-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--card)}
+.vc-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:15px var(--fb);color:var(--ink);background:#fff}
+.vc-form button{background:var(--coral);color:#fff;border:0;border-radius:12px;padding:0 16px;font:600 14px var(--fb);cursor:pointer}
+.vc-form button:disabled{opacity:.6}
+.vc-foot{font-size:11px;color:var(--muted);padding:0 12px 8px;background:var(--card)}
+@media (max-width:980px){.vc-btn span{display:none}.vc-btn{padding:14px}}
+</style>
+<button class="vc-btn" id="vcBtn" type="button" aria-label="Tire sua dúvida com a nossa assistente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>Tire sua dúvida</span></button>
+<div class="vc-box" id="vcBox" role="dialog" aria-label="Atendimento Vai com Milhas">
+ <div class="vc-head"><div><b>Atendimento Vai com Milhas</b><small>Assistente automática · respostas na hora</small></div><button type="button" id="vcX" aria-label="Fechar">×</button></div>
+ <div class="vc-msgs" id="vcMsgs" aria-live="polite"></div>
+ <form class="vc-form" id="vcForm"><input id="vcIn" maxlength="600" autocomplete="off" placeholder="Escreva sua dúvida" aria-label="Sua dúvida"><button type="submit">Enviar</button></form>
+ <div class="vc-foot">Assistente automática: pode errar. Vagas e preços de programas mudam a qualquer momento.</div>
+</div>
+<script>
+(function(){
+  var API='https://gestor.vaicommilhas.com/api/site/chat';
+  var box=document.getElementById('vcBox'),btn=document.getElementById('vcBtn'),msgs=document.getElementById('vcMsgs'),form=document.getElementById('vcForm'),inp=document.getElementById('vcIn');
+  var iniciou=false;
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function link(t){return esc(t).replace(/https?:\/\/[^\s<)]+[^\s<).,;:!?]/g,function(u){return '<a href="'+u+'" target="_blank" rel="noopener">'+u.replace(/^https?:\/\//,'').replace(/\?.*$/,'')+'</a>'})}
+  function add(t,quem){var d=document.createElement('div');d.className='vc-m '+quem;d.innerHTML=quem==='bot'?link(t):esc(t);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
+  function ev(n){try{if(window.gtag)gtag('event',n,{local:'chat_site'});if(window.fbq&&n==='chat_pergunta')fbq('track','Contact');}catch(_){}}
+  function abrir(){box.classList.add('open');btn.style.display='none';var f=document.getElementById('tgf');if(f)f.style.visibility='hidden';
+    if(!iniciou){iniciou=true;add('Oi! Posso te ajudar a escolher entre o canal grátis, o grupo de alertas e o Gestor de Milhas, ou tirar uma dúvida sobre milhas. O que você procura?','bot');
+      var s=document.createElement('div');s.className='vc-sug';['Qual a diferença entre o canal e o grupo?','O que é o Gestor de Milhas?','Não tenho milhas, por onde começo?'].forEach(function(q){var b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=function(){s.remove();enviar(q)};s.appendChild(b)});msgs.appendChild(s)}
+    ev('chat_abriu');setTimeout(function(){inp.focus()},50)}
+  function fechar(){box.classList.remove('open');btn.style.display='';var f=document.getElementById('tgf');if(f)f.style.visibility=''}
+  var ocupado=false;
+  function enviar(t){t=String(t||'').trim();if(!t||ocupado)return;ocupado=true;var sug=msgs.querySelector('.vc-sug');if(sug)sug.remove();
+    add(t,'eu');inp.value='';var w=add('Digitando...','bot');form.querySelector('button').disabled=true;ev('chat_pergunta');
+    fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texto:t})}).then(function(r){return r.json()}).then(function(j){w.innerHTML=link(j.resposta||j.error||'Não consegui responder agora. Chame o Adriano no Telegram: https://t.me/adrianosoaaares')})
+    .catch(function(){w.innerHTML=link('Não consegui responder agora. Chame o Adriano no Telegram: https://t.me/adrianosoaaares')})
+    .then(function(){ocupado=false;form.querySelector('button').disabled=false;msgs.scrollTop=msgs.scrollHeight;inp.focus()})}
+  btn.addEventListener('click',abrir);document.getElementById('vcX').addEventListener('click',fechar);
+  form.addEventListener('submit',function(e){e.preventDefault();enviar(inp.value)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('open'))fechar()});
+})();
+</script>
+<!-- ======================= FIM DO CHAT ======================= -->
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "957a5e89251249eeb51c2c7e3e3aab0c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
