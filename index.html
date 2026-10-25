@@ -436,6 +436,22 @@ footer h4{font-family:var(--fd);font-weight:600}
 .alert .price b{white-space:nowrap}
 @media(max-width:560px){.alert .price b{font-size:38px}.hero h1{font-size:clamp(38px,11vw,52px)}}
 
+/* grupo (25/10/2026): página de venda do grupo de alertas */
+.gr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gr-cards img{width:100%;height:auto;border-radius:18px;box-shadow:0 20px 40px -22px rgba(12,27,42,.5);display:block}
+.gr-note{font-size:13.5px;color:var(--muted);margin-top:14px}
+.gr-list{list-style:none;padding:0;margin:0;display:grid;gap:14px;max-width:780px}
+.gr-list li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;line-height:1.55}
+.gr-list li svg{flex:0 0 22px;width:22px;height:22px;color:var(--ok);margin-top:2px}
+.gr-wrap{overflow-x:auto;border-radius:18px}
+.gr-tab{width:100%;min-width:520px;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:15px}
+.gr-tab th,.gr-tab td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.gr-tab thead th{background:var(--tinta);color:var(--creme);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.gr-tab td:last-child{font-weight:600}
+.gr-tab tbody tr:last-child td{border-bottom:0}
+.gr-plan{max-width:640px}
+.gr-top .cta-row{margin-top:22px}
+@media (max-width:760px){.gr-cards{grid-template-columns:1fr;max-width:440px;margin-inline:auto}.gr-wrap{overflow:visible}.gr-tab{min-width:0;border:0;background:none}.gr-tab thead{display:none}.gr-tab tbody tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}.gr-tab td{display:block;border:0;padding:3px 0}.gr-tab td:first-child{font-weight:700;margin-bottom:4px}.gr-tab td[data-l]::before{content:attr(data-l) ': ';color:var(--muted);font-weight:500}}
 </style>
 
 <link rel="canonical" href="https://vaicommilhas.com/">
@@ -540,7 +556,7 @@ footer h4{font-family:var(--fd);font-weight:600}
         <ul>
           <li><a href="https://t.me/vaicommilhasalertagratis?origem=rodape" target="_blank" rel="noopener" data-ev="canal_rodape">Canal grátis no Telegram</a></li>
           <li><a href="https://www.instagram.com/vaicommilhas.alerta/" target="_blank" rel="noopener" data-ev="instagram_rodape">Instagram @vaicommilhas.alerta</a></li>
-          <li><a href="https://pay.hub.la/VLkxrC4SgoaCWVMtSbvc" target="_blank" rel="noopener" data-ev="hubla_rodape">Assinar o grupo</a></li>
+          <li><a href="/grupo/" data-ev="grupo_rodape">Grupo de alertas</a></li>
           <li><a href="https://pay.hub.la/bEsLXS9lj3azZY6IidxC" target="_blank" rel="noopener" data-ev="ebook_rodape">Ebook Como Gerar Milhas do Zero</a></li>
           <li><a href="https://gestor.vaicommilhas.com/" target="_blank" rel="noopener" data-ev="gestor_rodape">Gestor de Milhas (entrar ou criar conta)</a></li>
           <li><a href="https://ig.me/m/vaicommilhas.alerta" target="_blank" rel="noopener" data-ev="duvidas_rodape">Dúvidas: direct no @vaicommilhas.alerta</a></li>
@@ -593,7 +609,7 @@ function viagens(){
 const FAQ=[
  ['Preciso ter milhas para aproveitar os alertas?','<p>Ajuda, mas não é obrigatório para começar. Cada alerta mostra quantas milhas a emissão pede e em qual programa, então você consegue avaliar se já tem saldo ou se vale juntar. O conteúdo do canal explica como começar a acumular do zero.</p><p>Se quiser um passo a passo completo, o ebook <a href="https://pay.hub.la/bEsLXS9lj3azZY6IidxC" target="_blank" rel="noopener" data-ev="ebook_faq">Como Gerar Milhas do Zero</a> reúne tudo em um só lugar.</p>'],
  ['Vocês emitem a passagem ou vendem milhas?','<p>Não vendemos milhas. Nos alertas, o Vai com Milhas mostra a oportunidade e explica o caminho, e a emissão é feita por você, na sua conta, direto no site ou app do programa de fidelidade.</p>'],
- ['Qual a diferença entre o canal grátis e o grupo pago?','<p>O canal grátis traz alertas selecionados e conteúdo para começar. O grupo pago recebe mais oportunidades, assim que entram na curadoria, e inclui o passo a passo para avaliar e emitir, além de estratégias de bônus e compra de pontos.</p>'],
+ ['Qual a diferença entre o canal grátis e o grupo pago?','<p>No canal grátis chegam alguns alertas do grupo, 4 horas depois e no máximo 6 por dia, mais conteúdo para começar. No grupo pago chegam todos, na hora, separados por cabine, com o passo a passo para avaliar e emitir. <a href="/grupo/">Veja lado a lado</a>.</p>'],
  ['Onde eu recebo os alertas?','<p>No Telegram. Basta ter o app instalado. Você ativa as notificações do canal ou do grupo e recebe cada alerta no celular.</p>'],
  ['Os valores dos alertas são garantidos?','<p>Não. Vagas com milhas mudam o tempo todo e podem acabar em minutos. Por isso a recomendação é sempre confirmar a disponibilidade no site do programa antes de transferir pontos ou emitir.</p>'],
  ['Como funciona o cupom VAICOMMILHAS30?','<p>O cupom dá 30% de desconto no primeiro ciclo da assinatura (primeiro mês, trimestre ou ano, conforme o plano). As renovações seguintes são cobradas pelo valor cheio do plano. O cupom é limitado aos primeiros 100 usos.</p>'],
@@ -734,7 +750,7 @@ ${trustStrip()}
     <div class="price-opt best"><span class="flag">Mais econômico</span><small>Anual</small><b>R$ 320</b><span>R$ 26,67 por mês</span></div>
    </div>
    <div class="coupon"><span>Cupom</span><code>VAICOMMILHAS30</code><button type="button" onclick="copyCoupon(this)">Copiar</button><p>30% de desconto no primeiro ciclo do plano escolhido. As renovações seguem pelo valor cheio. Quantidade limitada de usos.</p></div>
-   <a class="btn btn-ouro" href="${HUBLA}" ${ext} data-ev="hubla_planos">Assinar o grupo${ico('arrow')}</a>
+   <a class="btn btn-ouro" href="/grupo/" data-ev="grupo_planos">Ver o grupo e assinar${ico('arrow')}</a>
    <p class="plan-foot">Pagamento pela Hubla, com cartão ou Pix. Cancele a renovação automática quando quiser. Valores conferidos em setembro de 2026.</p>
   </div>
   <div class="plan gm rv">
@@ -925,8 +941,74 @@ function privacidade(){return `
 </article></div>
 `}
 
-const ROUTES={'':home,'como-funciona':home,'planos':home,'duvidas':home,'guia-vai-com-milhas':guia,'executiva-com-milhas':guia,'privacidade':privacidade};
-const TITLES={'guia-vai-com-milhas':'Guia Vai com Milhas: passagens em executiva usando milhas','executiva-com-milhas':'Guia Vai com Milhas: passagens em executiva usando milhas','privacidade':'Política de privacidade e termos | Vai com Milhas'};
+
+/* Página do grupo de alertas (25/10/2026). Fatos conferidos: repost do canal grátis 4 h depois e até 6 por dia (workflow de 20/10), tópicos por cabine no grupo, programas em ordem de custo na legenda do alerta. */
+const GR_ALERTAS=[
+ ['/grupo/alerta-orlando.jpg','Campinas para Orlando, econômica, 90 mil pontos Azul só ida mais taxas'],
+ ['/grupo/alerta-buenos-aires.jpg','Brasília para Buenos Aires, econômica, 34 mil milhas Smiles só ida mais taxas'],
+ ['/grupo/alerta-barcelona.jpg','São Paulo para Barcelona, executiva, 85 mil milhas Flying Blue só ida mais taxas']];
+const GR_FAQ=[
+ ['Os alertas são garantidos?','<p>Não. São vagas reais vistas pelo radar na hora do envio, e vaga com milhas some rápido. Confira no programa antes de transferir pontos ou emitir.</p>'],
+ ['Preciso ter milhas?','<p>Ajuda, mas não é obrigatório para começar. Cada alerta mostra quantas milhas a emissão pede e em qual programa, e você vê se já tem saldo ou se vale juntar.</p>'],
+ ['Qual a diferença para o canal grátis?','<p>No canal grátis chegam alguns alertas do grupo, 4 horas depois e no máximo 6 por dia. No grupo chegam todos, na hora, separados por cabine. A tabela acima mostra lado a lado.</p>'],
+ ['Como eu cancelo?','<p>Pela sua área de cliente na Hubla, quando quiser. A renovação para e o acesso continua até o fim do período já pago.</p>']];
+function grupoPage(){return `
+<section class="page-head gr-top"><div class="wrap">
+ <span class="eyebrow">Grupo de alertas</span>
+ <h1>Os alertas chegam no grupo antes de chegar em qualquer outro lugar.</h1>
+ <p class="lead">O radar procura passagens com milhas várias vezes ao dia e manda no Telegram, separado por cabine, com programa, milhas, taxas e datas abertas.</p>
+ <div class="cta-row cta-stack"><a class="btn btn-ouro" href="${HUBLA}" ${ext} data-ev="hubla_grupo_topo">Assinar o grupo${ico('arrow')}</a><a class="cta-link" href="${tg('grupo')}" ${ext} data-ev="canal_grupo">${ico('tg')}Conhecer antes pelo canal grátis</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="sec-head rv"><span class="eyebrow">Alertas que já saíram no grupo</span><h2>É isto que chega no seu celular.</h2></div>
+ <div class="gr-cards rv">${GR_ALERTAS.map(([src,alt])=>`<img src="${src}" alt="${alt}" width="1080" height="1350" loading="lazy">`).join('')}</div>
+ <p class="gr-note">Alertas enviados no grupo em outubro de 2026. Vaga, milhas e taxas mudam: são exemplos, não ofertas abertas.</p>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+ <div class="sec-head rv"><span class="eyebrow">O que você recebe</span><h2>O que importa para decidir rápido.</h2></div>
+ <ul class="gr-list rv">
+  <li>${ico('check')}<span>Alertas todos os dias, enviados assim que o radar encontra, em tópicos separados: econômica, executiva e primeira.</span></li>
+  <li>${ico('check')}<span>Em cada alerta: rota, companhia que opera o voo, programas que emitem (do mais barato para o mais caro), milhas, taxas e datas abertas.</span></li>
+  <li>${ico('check')}<span>Primeiro os programas que dá para juntar no Brasil: Azul, Smiles e LATAM Pass, e os parceiros quando compensam.</span></li>
+  <li>${ico('check')}<span>Ebook Guia Completo de Emissões incluído na assinatura.</span></li>
+  <li>${ico('check')}<span>Dúvida sobre um alerta? É só chamar a gente no Telegram.</span></li>
+ </ul>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+ <div class="sec-head rv"><span class="eyebrow">Canal grátis ou grupo</span><h2>Lado a lado.</h2></div>
+ <div class="gr-wrap rv"><table class="gr-tab">
+  <thead><tr><th></th><th>Canal grátis</th><th>Grupo de alertas</th></tr></thead>
+  <tbody>
+   <tr><td>Quando o alerta chega</td><td data-l="Canal grátis">4 horas depois do grupo</td><td data-l="Grupo">Na hora em que o radar encontra</td></tr>
+   <tr><td>Quantos alertas</td><td data-l="Canal grátis">Até 6 por dia</td><td data-l="Grupo">Todos</td></tr>
+   <tr><td>Separado por cabine</td><td data-l="Canal grátis">Não</td><td data-l="Grupo">Sim: econômica, executiva e primeira</td></tr>
+   <tr><td>Programas que emitem, do mais barato ao mais caro</td><td data-l="Canal grátis">Sim</td><td data-l="Grupo">Sim</td></tr>
+   <tr><td>Preço</td><td data-l="Canal grátis">R$ 0</td><td data-l="Grupo">A partir de R$ 26,67 por mês no anual</td></tr>
+  </tbody></table></div>
+ <p class="gr-note">O canal grátis mostra como funciona. O grupo chega primeiro, e vaga boa costuma acabar nessas 4 horas.</p>
+</div></section>
+<section class="sec plans" style="padding-top:0"><div class="wrap"><div class="plan pro gr-plan rv">
+ <span class="kick">Grupo de alertas</span>
+ <h3>Escolha o plano</h3>
+ <div class="prices">
+  <div class="price-opt"><small>Mensal</small><b>R$ 35</b><span>por mês</span></div>
+  <div class="price-opt"><small>Trimestral</small><b>R$ 90</b><span>R$ 30 por mês</span></div>
+  <div class="price-opt best"><span class="flag">Mais econômico</span><small>Anual</small><b>R$ 320</b><span>R$ 26,67 por mês</span></div>
+ </div>
+ <div class="coupon"><span>Cupom</span><code>VAICOMMILHAS30</code><button type="button" onclick="copyCoupon(this)">Copiar</button><p>30% de desconto no primeiro ciclo do plano escolhido. As renovações seguem pelo valor cheio. Quantidade limitada de usos.</p></div>
+ <a class="btn btn-ouro" href="${HUBLA}" ${ext} data-ev="hubla_grupo_planos">Assinar o grupo${ico('arrow')}</a>
+ <p class="plan-foot">Pagamento pela Hubla, com cartão ou Pix. Você cancela a renovação quando quiser.</p>
+</div>
+<div class="value-note rv" style="margin-top:22px">${ico('info')}<span>Opera milhas para clientes? O <b>Gestor + Alertas</b> mostra cada alerta com o custo das suas milhas e qual conta emite. <a href="https://gestor.vaicommilhas.com/conheca?origem=site_grupo" target="_blank" rel="noopener" data-ev="gestor_grupo">Conhecer o Gestor</a></span></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+ <div class="sec-head rv"><span class="eyebrow">Dúvidas</span><h2>Antes de assinar.</h2></div>
+ <div class="faq">${GR_FAQ.map(([q,a])=>`<details class="rv"><summary>${q}</summary>${a}</details>`).join('')}</div>
+</div></section>
+${finalCta()}`}
+
+const ROUTES={'grupo':grupoPage,'':home,'como-funciona':home,'planos':home,'duvidas':home,'guia-vai-com-milhas':guia,'executiva-com-milhas':guia,'privacidade':privacidade};
+const TITLES={'grupo':'Grupo de alertas de passagens com milhas | Vai com Milhas','guia-vai-com-milhas':'Guia Vai com Milhas: passagens em executiva usando milhas','executiva-com-milhas':'Guia Vai com Milhas: passagens em executiva usando milhas','privacidade':'Política de privacidade e termos | Vai com Milhas'};
 const app=document.getElementById('app');
 let io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'}):null;
 function animateIn(){if(!io||matchMedia('(prefers-reduced-motion: reduce)').matches)return;app.querySelectorAll('.rv').forEach((el,i)=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*.95)return;el.classList.add('pre');io.observe(el)})}
@@ -935,7 +1017,7 @@ function animateIn(){if(!io||matchMedia('(prefers-reduced-motion: reduce)').matc
 const cio=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,n=+el.dataset.n,p=el.dataset.p||'';if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=p+n;return}const t0=performance.now(),d=1200;const step=t=>{const k=Math.min(1,(t-t0)/d),v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=p+v;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.6}):null;
 function countUp(){if(cio)app.querySelectorAll('.cnt').forEach(el=>cio.observe(el))}
 function route(){
- const PAG={'guia-vai-com-milhas':1,'executiva-com-milhas':1,'privacidade':1};
+ const PAG={'grupo':1,'guia-vai-com-milhas':1,'executiva-com-milhas':1,'privacidade':1};
  const path=location.pathname.replace(/index\.html$/,'').replace(/^\/|\/$/g,'');
  const hk=(location.hash.replace(/^#\/?/,'').split('?')[0])||'';
  if(!path&&PAG[hk]){location.replace('/'+(hk==='privacidade'?'privacidade':'guia-vai-com-milhas')+'/');return}
@@ -958,14 +1040,15 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[data-anchor]')
   var destino = slot.indexOf('gestor')===0 ? 'gestor'
               : slot.indexOf('canal')===0 ? 'telegram'
               : slot.indexOf('hubla')===0 ? 'assinatura'
-              : slot.indexOf('ebook')===0 ? 'ebook' : 'instagram';
+              : slot.indexOf('ebook')===0 ? 'ebook'
+              : slot.indexOf('grupo')===0 ? 'pagina_grupo' : 'instagram';
   /* carimba UTM no checkout da Hubla para a venda saber de onde veio */
   if(/pay\.hub\.la/.test(href) && href.indexOf('utm_source')===-1){
     ev.setAttribute('href', href + (href.indexOf('?')>-1?'&':'?')
       + 'utm_source=site&utm_medium=' + encodeURIComponent(slot) + '&utm_campaign=vaicommilhas');
   }
-  var gEv={gestor:'clique_gestor',telegram:'canal_telegram',assinatura:'checkout_assinatura',ebook:'checkout_ebook',instagram:'contato_instagram'}[destino];
-  var mEv={gestor:'Lead',telegram:'Lead',assinatura:'InitiateCheckout',ebook:'InitiateCheckout',instagram:'Contact'}[destino];
+  var gEv={pagina_grupo:'ver_pagina_grupo',gestor:'clique_gestor',telegram:'canal_telegram',assinatura:'checkout_assinatura',ebook:'checkout_ebook',instagram:'contato_instagram'}[destino];
+  var mEv={pagina_grupo:'ViewContent',gestor:'Lead',telegram:'Lead',assinatura:'InitiateCheckout',ebook:'InitiateCheckout',instagram:'Contact'}[destino];
   if(window.gtag){ gtag('event','clique_cta',{local:slot,destino:destino,origem:origem});
                    gtag('event',gEv,{local:slot,origem:origem}); }
   if(window.fbq) fbq('track',mEv,{content_name:slot});
